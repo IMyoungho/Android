@@ -15,7 +15,7 @@ import org.json.JSONObject;
 
 public class NoticeActivity extends AppCompatActivity {
     TextView textResponse;
-    Button btnGetRequest, btnPostRequest;
+    Button btnPostRequest;
     RestClient restClient;
     protected void onCreate(Bundle savedInstanceState){ //화면 만들기 active_notice.xml 화면띄움
         super.onCreate(savedInstanceState);
@@ -40,7 +40,8 @@ public class NoticeActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         String response = restClient.postRequest();
-                        setText("HTTPS Post Response:-\n" + response);
+                        //setText("HTTPS Post Response:-\n" + response);
+                        setText(response); //이 부분부터 파씽 고고
                     }
                 }).start();
             }

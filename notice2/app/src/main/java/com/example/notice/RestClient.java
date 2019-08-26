@@ -26,7 +26,7 @@ public class RestClient {
         }
         return instance;
     }
-
+    
     public String postRequest() {
         String responseString = "";
         HttpClient httpClient = HTTPUtils.getNewHttpClient(REST_SERVER_HTTPS_POST_URI.startsWith(HTTPS_STRING));

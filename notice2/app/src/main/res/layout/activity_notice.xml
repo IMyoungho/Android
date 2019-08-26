@@ -125,7 +125,7 @@
 
     <TextView
         android:id="@+id/textResponse"
-        android:layout_width="331dp"
+        android:layout_width="416dp"
         android:layout_height="313dp"
         android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/btnPostRequest"
