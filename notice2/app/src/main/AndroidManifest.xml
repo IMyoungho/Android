@@ -19,7 +19,7 @@ package="com.example.notice">
     </activity>
     <activity android:name=".NoticeActivity"/>
     <activity android:name=".FindActivity"/>
-    <activity android:name=".NoteActivity"/>
+    <!-- <activity android:name=".NoteActivity"/> -->
 </application>
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
 </manifest>

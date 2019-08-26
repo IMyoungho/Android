@@ -15,11 +15,6 @@ import org.json.JSONObject;
 
 public class RestClient {
     private static final String HTTPS_STRING = "https";
-    /**
-     * https://developers.google.com/maps/documentation/geocoding/
-     * https://developers.google.com/url-shortener/v1/getting_started?csw=1#shorten
-     */
-    String REST_SERVER_HTTPS_GET_URI = "https://shinple.kr/app_db/notice_tbl.php";
     String REST_SERVER_HTTPS_POST_URI = "https://shinple.kr/app_db/notice_tbl.php";
 
     private RestClient(){
@@ -61,20 +56,5 @@ public class RestClient {
         }
         is.close();
         return sb.toString();
-    }
-
-    public String getRequest() {
-        String responseString = "";
-        HttpClient httpClient = HTTPUtils.getNewHttpClient(REST_SERVER_HTTPS_GET_URI.startsWith(HTTPS_STRING));
-        HttpResponse response = null;
-        InputStream in;
-        URI newURI = URI.create(REST_SERVER_HTTPS_GET_URI);
-        HttpGet getMethod = new HttpGet(newURI);
-        try {
-            response = httpClient.execute(getMethod);
-            in = response.getEntity().getContent();
-            responseString = convertStreamToString(in);
-        } catch (Exception e) {}
-        return responseString;
     }
 }

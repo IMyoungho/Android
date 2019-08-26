@@ -39,15 +39,6 @@ import javax.net.ssl.TrustManagerFactory;
 
 
 public class MainActivity extends AppCompatActivity {
-//    String myJSON;
-//    private static final String TAG_RESULTS = "result";
-//    private static final String TAG_ID = "id";
-//    private static final String TAG_NAME = "name";
-//    private static final String TAG_ADD = "address";
-//    JSONArray peoples = null;
-//    ArrayList<HashMap<String, String>> personList;
-//    ListView list;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,51 +47,5 @@ public class MainActivity extends AppCompatActivity {
         startActivity(noticeintent); // notice activity 실행
         finish();
     }
-
-
-    //SSL 통신
-//    public static SSLSocketFactory getPinnedCertSslSocketFactory(Context context) {
-//        try {
-//            CertificateFactory cf = CertificateFactory.getInstance("X.509");
-//            InputStream caInput = context.getResources().openRawResource(R.raw.addtrust);
-//            Certificate ca = null;
-//            try {
-//                ca = cf.generateCertificate(caInput);
-//                System.out.println("ca=" + ((X509Certificate) ca).getSubjectDN());
-//            } catch (CertificateException e) {
-//                e.printStackTrace();
-//            } finally {
-//                caInput.close();
-//            }
-//
-//            String keyStoreType = KeyStore.getDefaultType();
-//            KeyStore keyStore = KeyStore.getInstance(keyStoreType);
-//            keyStore.load(null, null);
-//            if (ca == null) {
-//                return null;
-//            }
-//            keyStore.setCertificateEntry("ca", ca);
-//
-//            String tmfAlgorithm = TrustManagerFactory.getDefaultAlgorithm();
-//            TrustManagerFactory tmf = TrustManagerFactory.getInstance(tmfAlgorithm);
-//            tmf.init(keyStore);
-//
-//            SSLContext sslContext= SSLContext.getInstance("TLS");
-//            sslContext.init(null, tmf.getTrustManagers(), null);
-//
-//            return sslContext.getSocketFactory();
-//        } catch (NoSuchAlgorithmException e) {
-//            e.printStackTrace();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        } catch (KeyStoreException e) {
-//            e.printStackTrace();
-//        } catch (KeyManagementException e) {
-//            e.printStackTrace();
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//        return null;
-//    }
 }
 
