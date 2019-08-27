@@ -12,7 +12,7 @@ import org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager;
 import org.apache.http.params.BasicHttpParams;
 import org.apache.http.params.HttpParams;
 
-
+// SSL 통신 시 필요
 public class HTTPUtils {
     /**
      * HttpClient

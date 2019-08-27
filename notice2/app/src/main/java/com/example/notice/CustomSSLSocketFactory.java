@@ -16,6 +16,8 @@ import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
 import org.apache.http.conn.ssl.SSLSocketFactory;
 
+
+// SSL 통신 시 필요
 public class CustomSSLSocketFactory extends SSLSocketFactory{
     SSLContext sslContext = SSLContext.getInstance("TLS");
     /**

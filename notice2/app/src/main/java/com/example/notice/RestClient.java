@@ -14,9 +14,9 @@ import org.json.JSONObject;
 
 public class RestClient{
     private static final String HTTPS_STRING = "https";
-    private String REST_SERVER_HTTPS_POST_URI;
+    private String REST_SERVER_HTTPS_POST_URI; // Post방식으로 요청할 DB URL 변수
 
-    public void parseDB(String DBurl){
+    public void parseDB(String DBurl){  //DB Url을 가져오는 함수
         this.REST_SERVER_HTTPS_POST_URI=DBurl;
     }
 

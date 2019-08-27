@@ -16,13 +16,14 @@ import org.json.JSONObject;
 public class NoticeActivity extends AppCompatActivity {
     TextView textResponse;
     Button btnPostRequest;
-    RestClient restClient;
+    RestClient restClient; //RestClient class를 이용해야함 필요 시 만들어서 사용
+
     protected void onCreate(Bundle savedInstanceState){ //화면 만들기 active_notice.xml 화면띄움
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notice); // notice 공지사항 화면 띄우기
         init();
     }
-
+    // SSL DB 추가 부분 ------------------------------------------------------------------------------------------------------------------------
     private void init() {
         getViews();
         setListeners();
@@ -60,6 +61,8 @@ public class NoticeActivity extends AppCompatActivity {
             }
         });
     }
+    // SSL DB ---------------------------------------------------------------------------------------------------------------------------------
+
 
     public void onClick_find(View v){ //test 검색을 누르면 화면전환(이 부분은 검색 목록이 떠야함)
         Intent findIntent = new Intent(getApplicationContext(), FindActivity.class);
