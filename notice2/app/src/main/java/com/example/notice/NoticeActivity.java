@@ -27,6 +27,7 @@ public class NoticeActivity extends AppCompatActivity {
         getViews();
         setListeners();
         restClient = RestClient.getInstance();
+        restClient.parseDB("https://shinple.kr/app_db/notice_tbl.php");  // 불러오고 싶은 DB 테이블 설정!!
     }
 
     private void getViews() {
@@ -34,7 +35,7 @@ public class NoticeActivity extends AppCompatActivity {
         textResponse = (TextView) findViewById(R.id.textResponse);
     }
 
-    private void setListeners() {
+    private void setListeners() {                               // 버튼 안눌러도 바로 받아오게 만들기!!! **********
         btnPostRequest.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,7 +74,7 @@ public class NoticeActivity extends AppCompatActivity {
     }
 
 
-    // JSON 데이터를 파싱합니다.
+    // JSON 데이터를 파싱합니다.(가져온 DB 정보 중 필요한 부분 파씽)
     // URLConnector로부터 받은 String이 JSON 문자열이기 때문입니다.
     public String ParseJSON(String target){
 
@@ -82,8 +83,8 @@ public class NoticeActivity extends AppCompatActivity {
             JSONArray arr = json.getJSONArray("result");
             for(int i = 0; i < arr.length(); i++){
                 JSONObject json2 = arr.getJSONObject(i);
-                textResponse.setText(json2.getString("admin_id"));
-//                textResponse.setText(json2.getString("title"));
+//                textResponse.setText(json2.getString("admin_id"));
+                textResponse.setText(json2.getString("title"));
 //                textResponse.setText(json2.getString("created_date"));
 //                textResponse.setText(json2.getString("n_id"));
             }

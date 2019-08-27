@@ -12,14 +12,12 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.protocol.HTTP;
 import org.json.JSONObject;
 
-public class RestClient {
-    public String DBurl;
-
+public class RestClient{
     private static final String HTTPS_STRING = "https";
-    String REST_SERVER_HTTPS_POST_URI = "https://shinple.kr/app_db/notice_tbl.php";
+    private String REST_SERVER_HTTPS_POST_URI;
 
-    public void parseDB(String DBstr){
-        this.DBurl=DBstr;
+    public void parseDB(String DBurl){
+        this.REST_SERVER_HTTPS_POST_URI=DBurl;
     }
 
     private RestClient(){
@@ -42,7 +40,7 @@ public class RestClient {
 
         try {
             JSONObject postJSON = new JSONObject();
-            postJSON.put("longUrl", "https://www.shinple.kr/"); //http로 해도 자동으로 리다이렉트되도록 서버에서 설정해놓음^^
+            postJSON.put("longUrl", "https://www.shinple.kr/"); //http로 해도 자동으로 https 리다이렉트 되도록 서버에서 설정해놓음^^
             postMethod.setEntity(new StringEntity(postJSON.toString(), HTTP.UTF_8));
             postMethod.setHeader("Content-Type", "application/json");
             response = httpClient.execute(postMethod);
