@@ -14,16 +14,16 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class NoticeActivity extends AppCompatActivity {
-    TextView textResponse;
-    Button btnPostRequest;
-    RestClient restClient; //RestClient class를 이용해야함 필요 시 만들어서 사용
-
     protected void onCreate(Bundle savedInstanceState){ //화면 만들기 active_notice.xml 화면띄움
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notice); // notice 공지사항 화면 띄우기
         init();
     }
-    // SSL DB 추가 부분 ------------------------------------------------------------------------------------------------------------------------
+
+    // SSL 통신 시 필요 : DB 추가 부분 ------------------------------------------------------------------------------------------------------------------------
+    TextView textResponse;
+    RestClient restClient; //RestClient class를 이용해야함 필요 시 만들어서 사용
+
     private void init() {
         getViews();
         setListeners();
@@ -32,36 +32,33 @@ public class NoticeActivity extends AppCompatActivity {
     }
 
     private void getViews() {
-        btnPostRequest = (Button) findViewById(R.id.btnPostRequest);
         textResponse = (TextView) findViewById(R.id.textResponse);
     }
 
-    private void setListeners() {                               // 버튼 안눌러도 바로 받아오게 만들기!!! **********
-        btnPostRequest.setOnClickListener(new OnClickListener() {
+    private void setListeners() {                                   // request에 따른 response 함수
+        new Thread(new Runnable() {
             @Override
-            public void onClick(View v) {
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        String response = restClient.postRequest();
-                        //setText("HTTPS Post Response:-\n" + response);
-                        setText(response); //이 부분부터 파씽 고고
-                    }
-                }).start();
+            public void run() {
+                String response = restClient.postRequest(); // response 내용 저장
+                setText(response); //파씽 함수 고고
             }
-        });
+        }).start();
     }
 
     private void setText(final String response) {
         NoticeActivity.this.runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                //textResponse.setText(response);
+                try {
+                    Thread.sleep(300); // DB 너무 빨리 접근해서 가끔 에러 발생으로 예상, sleep으로 처리
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
                 ParseJSON(response);
             }
         });
     }
-    // SSL DB ---------------------------------------------------------------------------------------------------------------------------------
+    // SSL 통신 시 필요  -------------------------------------------------------------------------------------------------------------------------------------
 
 
     public void onClick_find(View v){ //test 검색을 누르면 화면전환(이 부분은 검색 목록이 떠야함)
@@ -80,7 +77,6 @@ public class NoticeActivity extends AppCompatActivity {
     // JSON 데이터를 파싱합니다.(가져온 DB 정보 중 필요한 부분 파씽)
     // URLConnector로부터 받은 String이 JSON 문자열이기 때문입니다.
     public String ParseJSON(String target){
-
         try {
             JSONObject json = new JSONObject(target);
             JSONArray arr = json.getJSONArray("result");
@@ -96,7 +92,6 @@ public class NoticeActivity extends AppCompatActivity {
         catch(Exception e){
             e.printStackTrace();
         }
-
         return null;
     }
 }

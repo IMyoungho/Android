@@ -12,6 +12,8 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.protocol.HTTP;
 import org.json.JSONObject;
 
+
+// SSL 통신 시 필요
 public class RestClient{
     private static final String HTTPS_STRING = "https";
     private String REST_SERVER_HTTPS_POST_URI; // Post방식으로 요청할 DB URL 변수
