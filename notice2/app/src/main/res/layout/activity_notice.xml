@@ -74,8 +74,8 @@
 
     <LinearLayout
         android:id="@+id/listLinearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="481dp"
+        android:layout_width="395dp"
+        android:layout_height="235dp"
         android:gravity="center_vertical"
         android:orientation="vertical"
 
@@ -84,6 +84,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/search_layout"
         app:layout_constraintVertical_bias="0.0">
+
+        <ListView
+            android:id="@+id/listLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="435dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
+            android:choiceMode="singleChoice"
+            android:divider="#ffcc22"
+            android:dividerHeight="1.5dp"
+            app:layout_constraintBottom_toBottomOf="@+id/listLinearLayout"
+            app:layout_constraintEnd_toEndOf="@+id/listLinearLayout"
+            app:layout_constraintStart_toStartOf="@+id/listLinearLayout"
+            app:layout_constraintTop_toTopOf="@+id/listLinearLayout"
+            app:layout_constraintVertical_bias="0.483"
+            tools:context="peace.httpurlconnection.NoticeActivitiy" />
+
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -91,13 +108,15 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent">
+
             <TableRow
-                android:stretchColumns="*"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="#9D9C9C"
                 android:fontFamily="@font/oneshinhanbold"
-                android:gravity="center">
+                android:gravity="center"
+                android:stretchColumns="*">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -108,6 +127,7 @@
                     android:text="번호"
                     android:textColor="#FFFFFF"
                     android:textSize="18sp" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -118,6 +138,7 @@
                     android:text="제목"
                     android:textColor="#FFFFFF"
                     android:textSize="18sp" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -128,6 +149,7 @@
                     android:text="작성자"
                     android:textColor="#FFFFFF"
                     android:textSize="18sp" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -140,21 +162,6 @@
                     android:textSize="18sp" />
             </TableRow>
         </TableLayout>
-        <ListView
-            android:id="@+id/listLayout"
-            android:layout_width="wrap_content"
-            android:layout_height="435dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toBottomOf="@+id/listLinearLayout"
-            app:layout_constraintEnd_toEndOf="@+id/listLinearLayout"
-            app:layout_constraintStart_toStartOf="@+id/listLinearLayout"
-            app:layout_constraintTop_toTopOf="@+id/listLinearLayout"
-            app:layout_constraintVertical_bias="0.483"
-            android:divider="#ffcc22"
-            android:dividerHeight="1.5dp"
-            android:choiceMode="singleChoice"
-            tools:context="peace.httpurlconnection.NoticeActivitiy"/>
     </LinearLayout>
 
     <!-- Linear로 table 감싸고 Linear을 스크롤로 감싸기 추가 -->
@@ -188,10 +195,10 @@
         android:id="@+id/textResponse"
         android:layout_width="382dp"
         android:layout_height="48dp"
-        android:text="test!!"
+        android:layout_marginTop="40dp"
+        android:text="hihi"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintHorizontal_bias="0.724"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/listLinearLayout"
-        app:layout_constraintVertical_bias="0.772" />
+        app:layout_constraintTop_toBottomOf="@+id/listLinearLayout" />
 </androidx.constraintlayout.widget.ConstraintLayout>
