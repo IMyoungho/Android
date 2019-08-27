@@ -12,6 +12,7 @@ import org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager;
 import org.apache.http.params.BasicHttpParams;
 import org.apache.http.params.HttpParams;
 
+
 public class HTTPUtils {
     /**
      * HttpClient

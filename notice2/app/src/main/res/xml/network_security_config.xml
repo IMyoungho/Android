@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--     Pinning setting    -->
 <network-security-config>
     <domain-config>
         <domain includeSubdomains="true">https://shinple.kr</domain>

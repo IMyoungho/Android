@@ -1,10 +1,180 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/btnPostRequest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listLinearLayout"
+        app:layout_constraintVertical_bias="0.958" />
+
+    <LinearLayout
+        android:id="@+id/logoLayout"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="#004A9F"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/logo"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:fontFamily="@font/oneshinhanbold"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="Shinple"
+            android:textColor="#ffffff"
+            android:textSize="22dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/search_layout"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/noticestr_layout">
+
+        <SearchView
+            android:id="@+id/find_text"
+            android:layout_width="312dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:hint="search"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/srh_btn"
+            app:layout_constraintHorizontal_bias="0.869"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.159" />
+
+        <TextView
+            android:id="@+id/srh_btn"
+            android:layout_width="84dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:clickable="true"
+            android:fontFamily="@font/oneshinhanbold"
+            android:gravity="center_horizontal|center_vertical"
+            android:onClick="onClick_find"
+            android:text="검색"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.158" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/listLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="481dp"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search_layout"
+        app:layout_constraintVertical_bias="0.0">
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TableRow
+                android:stretchColumns="*"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#9D9C9C"
+                android:fontFamily="@font/oneshinhanbold"
+                android:gravity="center">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="30dp"
+                    android:background="#9D9C9C"
+                    android:gravity="center"
+                    android:text="번호"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="45dp"
+                    android:layout_marginRight="65dp"
+                    android:background="#9D9C9C"
+                    android:gravity="center"
+                    android:text="제목"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="30dp"
+                    android:background="#9D9C9C"
+                    android:gravity="center"
+                    android:text="작성자"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="#9D9C9C"
+                    android:gravity="center"
+                    android:text="생성일"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp" />
+            </TableRow>
+        </TableLayout>
+
+
+        <ListView
+            android:id="@+id/listLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="435dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/listLinearLayout"
+            app:layout_constraintEnd_toEndOf="@+id/listLinearLayout"
+            app:layout_constraintStart_toStartOf="@+id/listLinearLayout"
+            app:layout_constraintTop_toTopOf="@+id/listLinearLayout"
+            app:layout_constraintVertical_bias="0.483"
+            tools:context="peace.httpurlconnection.NoticeActivitiy"
+/>
+
+    </LinearLayout>
+
 
     <LinearLayout
         android:id="@+id/noticestr_layout"
@@ -30,121 +200,15 @@
             android:textSize="22dp" />
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/logoLayout"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:background="#004A9F"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/logo"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:fontFamily="@font/oneshinhanbold"
-            android:gravity="center_horizontal|center_vertical"
-            android:text="Shinple"
-            android:textColor="#ffffff"
-            android:textSize="22dp" />
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:id="@+id/search_layout"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/noticestr_layout">
-        <SearchView
-            android:id="@+id/find_text"
-            android:layout_width="312dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            android:hint="search"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/srh_btn"
-            app:layout_constraintHorizontal_bias="0.869"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.159" />
-        <TextView
-            android:id="@+id/srh_btn"
-            android:layout_width="84dp"
-            android:layout_height="46dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="8dp"
-            android:clickable="true"
-            android:fontFamily="@font/oneshinhanbold"
-            android:gravity="center_horizontal|center_vertical"
-            android:onClick="onClick_find"
-            android:text="검색"
-            android:textSize="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.158" />
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:id="@+id/listLinearLayout"
-        android:layout_width="411dp"
-        android:layout_height="158dp"
-        android:gravity="center_vertical"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/search_layout"
-        app:layout_constraintVertical_bias="0.0">
-
-        <ListView
-            android:id="@+id/listLayout"
-            android:layout_width="387dp"
-            android:layout_height="match_parent"
-            android:layout_marginStart="8dp"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toBottomOf="@+id/listLinearLayout"
-            app:layout_constraintEnd_toEndOf="@+id/listLinearLayout"
-            app:layout_constraintStart_toStartOf="@+id/listLinearLayout"
-            app:layout_constraintTop_toTopOf="@+id/listLinearLayout"
-            app:layout_constraintVertical_bias="0.483"
-            tools:context="peace.httpurlconnection.NoticeActivitiy" />
-    </LinearLayout>
-
     <TextView
         android:id="@+id/textResponse"
-        android:layout_width="416dp"
-        android:layout_height="313dp"
+        android:layout_width="372dp"
+        android:layout_height="111dp"
         android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/btnPostRequest"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/listLinearLayout"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/btnPostRequest"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/listLinearLayout"
-        app:layout_constraintVertical_bias="0.958" />
-
+        app:layout_constraintVertical_bias="0.772" />
 </androidx.constraintlayout.widget.ConstraintLayout>

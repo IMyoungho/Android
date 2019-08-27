@@ -1,6 +1,5 @@
 package com.example.notice;
 
-
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -14,8 +13,14 @@ import org.apache.http.protocol.HTTP;
 import org.json.JSONObject;
 
 public class RestClient {
+    public String DBurl;
+
     private static final String HTTPS_STRING = "https";
     String REST_SERVER_HTTPS_POST_URI = "https://shinple.kr/app_db/notice_tbl.php";
+
+    public void parseDB(String DBstr){
+        this.DBurl=DBstr;
+    }
 
     private RestClient(){
     }
@@ -26,7 +31,7 @@ public class RestClient {
         }
         return instance;
     }
-    
+
     public String postRequest() {
         String responseString = "";
         HttpClient httpClient = HTTPUtils.getNewHttpClient(REST_SERVER_HTTPS_POST_URI.startsWith(HTTPS_STRING));
@@ -37,7 +42,7 @@ public class RestClient {
 
         try {
             JSONObject postJSON = new JSONObject();
-            postJSON.put("longUrl", "http://www.shinple.kr/");
+            postJSON.put("longUrl", "https://www.shinple.kr/"); //http로 해도 자동으로 리다이렉트되도록 서버에서 설정해놓음^^
             postMethod.setEntity(new StringEntity(postJSON.toString(), HTTP.UTF_8));
             postMethod.setHeader("Content-Type", "application/json");
             response = httpClient.execute(postMethod);

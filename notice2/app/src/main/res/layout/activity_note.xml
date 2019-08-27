@@ -15,7 +15,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logoLayout">
-
         <TextView
             android:id="@+id/note_str"
             android:layout_width="match_parent"
@@ -30,6 +29,7 @@
             android:textSize="22dp" />
     </LinearLayout>
 
+
     <LinearLayout
         android:id="@+id/logoLayout"
         android:layout_width="match_parent"
@@ -39,7 +39,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
         <TextView
             android:id="@+id/logo"
             android:layout_width="match_parent"
@@ -108,7 +107,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/search_layout"
         app:layout_constraintVertical_bias="0.0">
-
         <ListView
             android:id="@+id/listLayout"
             android:layout_width="387dp"
@@ -123,6 +121,7 @@
             tools:context="peace.httpurlconnection.NoteActivitiy" />
     </LinearLayout>
 
+
     <TextView
         android:id="@+id/dbtext"
         android:layout_width="279dp"
@@ -133,7 +132,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/listLinearLayout"
         app:layout_constraintVertical_bias="0.538" />
-
     <Button
         android:id="@+id/dbbtn"
         android:layout_width="wrap_content"
@@ -146,5 +144,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/listLinearLayout"
         app:layout_constraintVertical_bias="0.827" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
