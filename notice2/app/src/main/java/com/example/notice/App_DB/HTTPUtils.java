@@ -1,5 +1,7 @@
-package com.example.notice;
+package com.example.notice.App_DB;
 
+
+import com.example.notice.App_DB.CustomSSLSocketFactory;
 
 import java.security.KeyStore;
 import org.apache.http.client.HttpClient;

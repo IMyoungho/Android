@@ -3,7 +3,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
 package="com.example.notice">
 <application
-
     android:allowBackup="true"
     android:icon="@mipmap/ic_launcher"
     android:label="@string/app_name"
@@ -20,6 +19,9 @@ package="com.example.notice">
     <activity android:name=".NoticeActivity"/>
     <activity android:name=".FindActivity"/>
     <!-- <activity android:name=".NoteActivity"/> -->  <!-- note DB 완성되면 풀어줘야함!! -->
+    <uses-library
+        android:name="org.apache.http.legacy"
+        android:required="false" />
 </application>
     <uses-permission android:name="android.permission.INTERNET"></uses-permission> <!--DB에서 가져오려면 필요-->
 </manifest>

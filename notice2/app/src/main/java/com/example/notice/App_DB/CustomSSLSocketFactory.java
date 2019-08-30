@@ -1,4 +1,4 @@
-package com.example.notice;
+package com.example.notice.App_DB;
 
 
 import java.io.IOException;

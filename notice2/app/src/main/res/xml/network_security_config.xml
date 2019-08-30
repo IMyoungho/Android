@@ -9,4 +9,8 @@
             <pin digest="SHA-256">lCppFqbkrlJ3EcVFAkeip0+44VaoJUymbnOaEUk7tEU=</pin>
         </pin-set>
     </domain-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">shinple.kr</domain>
+        <base-config cleartextTrafficPermitted="true" />
+    </domain-config>
 </network-security-config>
